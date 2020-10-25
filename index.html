@@ -53,7 +53,7 @@
       mediaRecorder.onstop = function(e) {
         const blob = new Blob(chunks, { 'type' : 'video/mp4' });
         chunks = [];
-        const name = prompt("File name");
+        const name = prompt("File name") || "video";
         downloadElem.href = window.URL.createObjectURL(blob);
         downloadElem.download = name + ".mp4";
         downloadElem.removeAttribute("hidden");
