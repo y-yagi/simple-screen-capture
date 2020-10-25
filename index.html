@@ -19,7 +19,7 @@
   </head>
   <body>
     <p><button id="start">Start Capture</button></p>
-    <a id="download" href="#" download="video.mp4">Download</a>
+    <a id="download" href="#" download="video.mp4" hidden>Download</a>
     <br>
     <strong>Log:</strong>
     <br>
@@ -56,6 +56,7 @@
         const name = prompt("File name");
         downloadElem.href = window.URL.createObjectURL(blob);
         downloadElem.download = name + ".mp4";
+        downloadElem.removeAttribute("hidden");
         console.log("Record stopped. Video can be downloaded via download link.");
       }
 
